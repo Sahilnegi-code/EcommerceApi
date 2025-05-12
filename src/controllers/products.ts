@@ -2,6 +2,12 @@ import { ErrorCode } from "../exceptions/root";
 import { prismaClient } from "../index";
 import { Request, Response } from "express";
 import { NotFoundException } from "../exceptions/not-found";
+
+interface Error {
+  name: string;
+  message: string;
+  stack?: string;
+}
 export const createProduct = async (req: Request, res: Response) => {
   const Product = await prismaClient.product.create({
     data: {
@@ -38,4 +44,24 @@ export const listProducts = async (req: Request, res: Response) => {
     take: 5,
   });
   res.status(200).json({ count, data: products });
+};
+
+export const deleteProduct = (req: Request, res: Response) => {};
+
+export const getProductById = async (req: Request, res: Response) => {
+  try {
+    const product = await prismaClient.product.findFirstOrThrow({
+      where: {
+        id: +req.params.id,
+      },
+    });
+    res.status(200).json({
+      product: product,
+    });
+  } catch (err: any) {
+    throw new NotFoundException(
+      "Product not found.",
+      ErrorCode.PRODUCT_NOT_FOUND
+    );
+  }
 };

@@ -13,6 +13,5 @@ console.log(PORT);
 export const prismaClient = new PrismaClient({
   log: ["query"],
 });
-
 app.use(errorMiddleware);
 app.listen(PORT, () => console.log("Hello"));
