@@ -13,11 +13,11 @@ Designed for scalability and clean architecture, following best coding practices
 
 ## ✨ Features
 
-✅ **User Authentication** - Register , login , and JWT-based authentication
-✅ **User Management** - Add a new address , Delete an address , List all addresses ,  Update profile , Change user role , List all users
+✅ **User Authentication** - Register , login , and JWT-based authentication.
+✅ **User Management** - Add a new address , Delete an address , List all addresses ,  Update profile , Change user role , List all users.
 ✅ **Cart Operations** - Add items, Update quantities, Remove items from the cart , list all carts.
-✅ **Order Management** — Create orders , list orders , cancelOrder  , getOrders 
-✅ **Product Management** - createProduct , updateProduct  , listProducts , deleteProduct , getProductById , searchProducts
+✅ **Order Management** — Create orders , list orders , cancelOrder  , getOrders.
+✅ **Product Management** - createProduct , updateProduct  , listProducts , deleteProduct , getProductById , searchProducts.
  
 ## 🛠 Tech Stack
 
