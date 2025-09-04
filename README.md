@@ -26,6 +26,9 @@ Designed for scalability and clean architecture, following best coding practices
 ## 🛠 Tech Stack
 
 **Backend:** Node.js, Express.js, Prisma , Typescript
+
 **Database:** MySQL  
+
 **Authentication:** JWT  
+
 **Validation:** Zod  
