@@ -2,7 +2,6 @@ import { prismaClient } from "../index";
 import { NextFunction, Request, Response } from "express";
 import { compareSync, hashSync } from "bcrypt";
 import jwt from "jsonwebtoken";
-import exp from "constants";
 import { JWT_SECRET } from "../secrets";
 import { UnprocessableEntity } from "../exceptions/validations";
 import { ErrorCode } from "../exceptions/root";
@@ -22,7 +21,6 @@ export const login = async (
     if (!user) {
       throw new NotFoundException("User not found.", ErrorCode.USER_NOT_FOUND);
     }
-    console.log(user, email, password);
     if (!compareSync(password, user?.password)) {
       throw new BadRequestException(
         "Incorrect password",
@@ -82,5 +80,4 @@ export const me = async (
   next: NextFunction
 ): Promise<any> => {
   res.json(req.user);
-  // return res.status(201).json(user);
 };

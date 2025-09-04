@@ -1,4 +1,4 @@
-import { NextFunction, Request, Response } from "express";
+import { NextFunction, Response } from "express";
 import { UnauthorizedException } from "../exceptions/unauthorized";
 import { ErrorCode } from "../exceptions/root";
 import { JWT_SECRET } from "../secrets";
@@ -22,7 +22,11 @@ const authMiddleware = async (
     const user = await prismaClient.user.findFirst({
       where: { id: payload.userId },
     });
-
+    if (!user) {
+      next(
+        new UnauthorizedException("User not found.", ErrorCode.UNAUTHORIZED)
+      );
+    }
     req.user = user || undefined;
 
     next();
