@@ -40,32 +40,18 @@ API Usage
 ---------
 To get started with the API, follow these steps:
 
-1. Clone the repository:
-   
-   git clone https://github.com/Sahilnegi-code/EcommerceApi.git
+1. Clone the repository: git clone https://github.com/Sahilnegi-code/EcommerceApi.git
 
-3. Install the dependencies:
-
-   npm  install
+3. Install the dependencies: npm  install
 
 5. Add your own `.env` file with the necessary environment variables.
 
-6. Start the development server:
- 
-    npm start
+6. Start the development server: npm start
    
-7. Initialize Prisma
-
-   npx prisma init
+7. Initialize Prisma:  npx prisma init
    
-9. Generate Prisma Client
+9. Generate Prisma Client: npx prisma generate
 
-   npx prisma generate
+11. Open Prisma Studio: npx prisma studio
 
-11. Open Prisma Studio
-
-    npx prisma studio
-
-13. Start the Server
-
-    npm start
+13. Start the Server:  npm start
