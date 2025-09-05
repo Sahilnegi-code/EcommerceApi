@@ -19,20 +19,20 @@ orderRoutes.post("/", [authMiddleware], errorHandler(createOrder));
 orderRoutes.get("/", [authMiddleware], errorHandler(listOrders));
 orderRoutes.put("/:id/cancel", [authMiddleware], errorHandler(cancelOrder));
 orderRoutes.get(
-  "/index",
+  "/admin",
   [authMiddleware, adminMiddleware],
   errorHandler(listAllOrders)
 );
 orderRoutes.get(
-  "/users/:id",
+  "/admin/users/:id/orders",
   [authMiddleware, adminMiddleware],
   errorHandler(listUserOrders)
 );
-orderRoutes.put(
+orderRoutes.patch(
   "/:id/status",
   [authMiddleware, adminMiddleware],
   errorHandler(changeStatus)
 );
-orderRoutes.put("/:id", [authMiddleware], errorHandler(getOrderById));
+orderRoutes.get("/:id", [authMiddleware], errorHandler(getOrderById));
 
 export default orderRoutes;

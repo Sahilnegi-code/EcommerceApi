@@ -1,5 +1,4 @@
 import { Router } from "express";
-import authRoutes from "./auth";
 import { errorHandler } from "../error-handler";
 import {
   createProduct,
