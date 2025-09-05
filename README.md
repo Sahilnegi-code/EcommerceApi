@@ -36,17 +36,29 @@ Designed for scalability and clean architecture, following best coding practices
 
 **Validation:** Zod  
 
-## 🧩 Scripts
+API Usage
+---------
+To get started with the API, follow these steps:
 
-**Start development server**
-npm run dev
+1. Clone the repository:
+   git clone https://github.com/Sahilnegi-code/EcommerceApi.git
 
-**Build project**
-npm run build
+2. Install the dependencies:
+   npm  install
 
-**Run production server**
-npm start
+3. Add your own `.env` file with the necessary environment variables.
 
-**Run Prisma migrations**
-npx prisma migrate dev
+4. Start the development server:
+   npm start
+   
+6. Initialize Prisma
+   npx prisma init
+   
+8. Generate Prisma Client
+  npx prisma generate
 
+9. Open Prisma Studio
+    npx prisma studio
+
+10. Start the Server
+   npm start
