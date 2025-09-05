@@ -32,3 +32,18 @@ Designed for scalability and clean architecture, following best coding practices
 **Authentication:** JWT  
 
 **Validation:** Zod  
+
+## 🧩 Scripts
+
+**Start development server**
+npm run dev
+
+**Build project**
+npm run build
+
+**Run production server**
+npm start
+
+**Run Prisma migrations**
+npx prisma migrate dev
+
