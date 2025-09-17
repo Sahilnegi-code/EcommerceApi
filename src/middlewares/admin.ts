@@ -1,5 +1,4 @@
-import { NextFunction, Request, Response } from "express";
-import request from "request";
+import { NextFunction, Response } from "express";
 import { UnauthorizedException } from "../exceptions/unauthorized";
 import { ErrorCode } from "../exceptions/root";
 import { CustomRequest } from "../types/express";
