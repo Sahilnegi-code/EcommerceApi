@@ -46,6 +46,13 @@ jobs:
           branch_name: preview/pr-${{ github.event.number }}-${{ needs.setup.outputs.branch }}
           api_key: ${{ secrets.NEON_API_KEY }}
           expires_at: ${{ env.EXPIRES_AT }}
+      - name: Debug Database URL
+        run: |
+          echo "db_url: ${{ steps.create_neon_branch.outputs.db_url }}"
+          echo "db_url_with_pooler: ${{ steps.create_neon_branch.outputs.db_url_with_pooler }}"
+          echo "DATABASE_URL env var: ${DATABASE_URL}"
+        env:
+          DATABASE_URL: "${{ steps.create_neon_branch.outputs.db_url_with_pooler }}"
       - name: Run Migrations
         run: npx prisma migrate deploy --schema=prisma/schema.prisma
         env:
