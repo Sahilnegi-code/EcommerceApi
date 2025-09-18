@@ -48,7 +48,7 @@ jobs:
         run: npx prisma migrate deploy --schema=prisma/schema.prisma
         env:
            DATABASE_URL: "${{ steps.create_neon_branch_encode.outputs.db_url_with_pooler }}"
-
+        working-directory: .
 
   delete_neon_branch:
     name: Delete Neon Branch
