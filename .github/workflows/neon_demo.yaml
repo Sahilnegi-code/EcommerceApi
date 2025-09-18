@@ -48,10 +48,10 @@ jobs:
           expires_at: ${{ env.EXPIRES_AT }}
           
           
-#      - name: Run Migrations
-#     run: npx prisma migrate deploy  
-#        env:
-#           DATABASE_URL: "${{ steps.create_neon_branch.outputs.db_url_with_pooler }}"
+      - name: Run Migrations
+        run: npx prisma migrate deploy  
+        env:
+           DATABASE_URL: "${{ steps.create_neon_branch.outputs.db_url_with_pooler }}"
 
 
   delete_neon_branch:
