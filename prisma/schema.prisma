@@ -31,12 +31,12 @@ model User {
   defaultShippingAddress Int?
   defaultBillingAddress  Int?
 
-  passworduseR String
-  createdAt    DateTime   @default(now())
-  updatedAt    DateTime   @updatedAt
-  addresses    Address[]
-  CartItem     CartItem[]
-  Order        Order[]
+  password  String
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  addresses Address[]
+  CartItem  CartItem[]
+  Order     Order[]
 
   @@map("users")
 }
