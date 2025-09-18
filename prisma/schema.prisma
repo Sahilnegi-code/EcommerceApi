@@ -31,7 +31,7 @@ model User {
   defaultShippingAddress Int?
   defaultBillingAddress  Int?
 
-  passwordUser String
+  passworduser String
   createdAt    DateTime   @default(now())
   updatedAt    DateTime   @updatedAt
   addresses    Address[]
