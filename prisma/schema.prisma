@@ -2,11 +2,13 @@
 
 generator client {
   provider        = "prisma-client-js"
-  previewFeatures = ["fullTextSearchPostgres"]
+  previewFeatures = ["fullTextSearch", "fullTextIndex"]
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mysql",
+  url = env("DATABASE_URL")
+
 }
 
 enum Role {
@@ -58,7 +60,7 @@ model Address {
 model Product {
   id          Int            @id @default(autoincrement())
   name        String
-  description String
+  description String         @db.Text
   price       Decimal
   tags        String
   createdAt   DateTime       @default(now())
@@ -66,6 +68,7 @@ model Product {
   cartItems   CartItem[]
   orders      OrderProduct[]
 
+  @@fulltext([name, description, tags])
   @@map("products")
 }
 
